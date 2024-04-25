@@ -1,4 +1,4 @@
-<!-- templates/base.html -->
+<!-- base.html -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,6 +11,22 @@
     >
 </head>
 <body class="container">
-{% block page_content %}{% endblock page_content %}
+    <nav>
+        <h1>Nav'z</h1>
+        <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="{% url 'project_index' %}">Projects</a></li> <!-- Updated link to projects -->
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+        </ul>
+    </nav>
+
+    {% block page_content %}{% endblock page_content %}
+
+    <footer>
+        <div class="container">
+            <p>&copy; {% now "Y" %} My Personal Portfolio. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
