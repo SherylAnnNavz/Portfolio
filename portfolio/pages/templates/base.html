@@ -77,6 +77,21 @@
         .footer i {
             color: #ff004f;
         }
+
+        .header-text {
+    margin-top: 20%;
+    font-size: 30px;
+}
+
+.header-text h1 {
+    font-size: 60px;
+    margin-top: 20px;
+}
+
+.header-text h1 span {
+    color: #ff004f;
+}
+
     </style>
 </head>
 <body class="container">
@@ -88,6 +103,10 @@
             <li><a href="{% url 'project_index' %}">Projects</a></li>
             <li><a href="{% url 'contact' %}">Contact</a></li>
         </ul>
+        <div class="header-text">
+            <p>Aspiring UI/UX Designer</p>
+            <h1>Hi, I'm <span>Sheryl Ann</span><br>from Philippines</h1>
+        </div>
     </nav>
 
     {% block page_content %}{% endblock page_content %}
