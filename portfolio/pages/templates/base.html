@@ -1,14 +1,83 @@
-<!-- base.html -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <title>{% block title %}My Personal Portfolio{% endblock title %}</title>
-    <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-    >
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #080808;
+            color: #fff;
+        }
+
+        .container {
+            padding: 10px 10%;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        nav h1 {
+            font-size: 50px;
+            color: #ff004f;
+        }
+
+        nav ul li {
+            display: inline-block;
+            list-style: none;
+            margin: 10px 20px;
+        }
+
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 18px;
+            position: relative;
+        }
+
+        nav ul li a::after {
+            content: '';
+            width: 0;
+            height: 3px;
+            background: #ff004f;
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            transition: 0.5s;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        .footer {
+            width: 100%;
+            text-align: center;
+            padding: 25px 0;
+            background: #262626;
+            font-weight: 300;
+            margin-top: 20px;
+        }
+
+        .footer i {
+            color: #ff004f;
+        }
+    </style>
 </head>
 <body class="container">
     <nav>
@@ -16,14 +85,14 @@
         <ul>
             <li><a href="{% url 'home' %}">Home</a></li>
             <li><a href="{% url 'about' %}">About</a></li>
-            <li><a href="{% url 'project_index' %}">Projects</a></li> <!-- Updated link to projects -->
+            <li><a href="{% url 'project_index' %}">Projects</a></li>
             <li><a href="{% url 'contact' %}">Contact</a></li>
         </ul>
     </nav>
 
     {% block page_content %}{% endblock page_content %}
 
-    <footer>
+    <footer class="footer">
         <div class="container">
             <p>&copy; {% now "Y" %} My Personal Portfolio. All rights reserved.</p>
         </div>
