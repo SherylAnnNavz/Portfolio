@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block page_content %}
+    <!--ABOUT-->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>Hello there! 👋 I'm Sheryl, a passionate and aspiring UI/UX Designer 
+                        from Philippines. I thrive on transforming complex problems into intuitive,
+                        beautiful, and user-friendly digital experiences.
+                        I believe in the power of design to make a meaningful impact. My approach 
+                        revolves around empathy, understanding the user's perspective, and solving 
+                        real-world problems. I'm driven by the philosophy that design is not just about 
+                        aesthetics but about creating seamless, enjoyable experiences.
+
+                    </p>
+
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>UI/UX</span><br>Crafting engaging and user-centric web/app interfaces. <br>
+                                Designing seamless and intuitive user experiences.</li>
+                            <li><span>Graphic Design</span><br>Creating visually stunning graphics that communicate compelling narratives. <br>
+                                Crafting unique visual identities for brands and projects. <br>
+                                Designing eye-catching graphics for apparel, including shirts.</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>Lorem ipsum</span><br>Lorem ipsum</li>
+                            <li><span>Lorem ipsum</span><br>Lorem ipsum</li>
+                            <li><span>Lorem ipsum</span><br>Lorem ipsum</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2021-Present</span><br>Palawan State University</li>
+                            <li><span>2019-2021</span><br>San Jose (Roxas) National High School</li>
+                            <li><span>2014-2015</span><br>Rizal Elementary School</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock page_content %}
+

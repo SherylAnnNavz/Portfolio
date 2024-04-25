@@ -11,45 +11,45 @@
             font-family: 'Poppins', sans-serif;
             box-sizing: border-box;
         }
-
+    
         html {
             scroll-behavior: smooth;
         }
-
+    
         body {
             background: #080808;
             color: #fff;
         }
-
+    
         .container {
             padding: 10px 10%;
         }
-
+    
         nav {
             display: flex;
             align-items: center;
             justify-content: space-between;
             flex-wrap: wrap;
         }
-
+    
         nav h1 {
             font-size: 50px;
             color: #ff004f;
         }
-
+    
         nav ul li {
             display: inline-block;
             list-style: none;
             margin: 10px 20px;
         }
-
+    
         nav ul li a {
             color: #ffffff;
             text-decoration: none;
             font-size: 18px;
             position: relative;
         }
-
+    
         nav ul li a::after {
             content: '';
             width: 0;
@@ -60,39 +60,158 @@
             bottom: -6px;
             transition: 0.5s;
         }
-
+    
         nav ul li a:hover::after {
             width: 100%;
         }
-
-        .footer {
-            width: 100%;
-            text-align: center;
-            padding: 25px 0;
-            background: #262626;
-            font-weight: 300;
+    
+    
+        .header-text {
+            margin-top: 20%;
+            font-size: 30px;
+        }
+    
+        .header-text h1 {
+            font-size: 60px;
             margin-top: 20px;
         }
-
-        .footer i {
+    
+        .header-text h1 span {
             color: #ff004f;
         }
-
-        .header-text {
-    margin-top: 20%;
-    font-size: 30px;
-}
-
-.header-text h1 {
-    font-size: 60px;
-    margin-top: 20px;
-}
-
-.header-text h1 span {
-    color: #ff004f;
-}
-
+    
+        #about {
+            padding: 80px 0;
+            color: #ababab;
+        }
+    
+        .row {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+    
+        .about-col-1 {
+            flex-basis: 35%;
+        }
+    
+        .about-col-1 img {
+            width: 100%;
+            border-radius: 15px;
+        }
+    
+        .about-col-2 {
+            flex-basis: 60%;
+        }
+    
+        .sub-title {
+            font-size: 60px;
+            font-weight: 600;
+            color: #fff;
+        }
+    
+        .tab-titles {
+            display: flex;
+            margin: 20px 0 40px;
+        }
+    
+        .tab-links {
+            margin-right: 50px;
+            font-size: 18px;
+            font-weight: 500;
+            cursor: pointer;
+            position: relative;
+        }
+    
+        .tab-links::after {
+            content: '';
+            width: 0;
+            height: 3px;
+            background: #ff004f;
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            transition: 0.5s;
+        }
+    
+        .tab-links.active-link::after {
+            width: 50%;
+        }
+    
+        .tab-contents ul li {
+            list-style: none;
+            margin: 10px 0;
+        }
+    
+        .tab-contents ul li span {
+            color: #b54769;
+            font-size: 14px;
+        }
+    
+        .tab-contents {
+            display: none;
+        }
+    
+        .tab-contents.active-tab {
+            display: block;
+        }
+    
+        .tab-links {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 18px;
+            position: relative;
+            margin: 10px 20px; /* Adjust margin as needed */
+        }
+    
+        .tab-links::after {
+            content: '';
+            width: 0;
+            height: 3px;
+            background: #ff004f;
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            transition: 0.5s;
+        }
+    
+        .tab-links:hover::after,
+        .tab-links.active-link::after {
+            width: 100%; /* Set width to 100% when hovering or when active */
+        }
+    
+        /* Modify the red line behavior for the "Experience" and "Education" tabs */
+        .tab-links.active-link.experience::after,
+        .tab-links.active-link.education::after {
+            width: 50%;
+        }
+    
+        .tab-links.experience:hover::after,
+        .tab-links.education:hover::after,
+        .tab-links.active-link.experience:hover::after,
+        .tab-links.active-link.education:hover::after {
+            width: 0; /* Change the width to 0 by default */
+        }
+    
+        .tab-links.experience:hover.active-link::after,
+        .tab-links.education:hover.active-link::after {
+            width: 100%; /* Set width to 100% only when hovering and active */
+        }
     </style>
+    
+    
+
+<script>
+    function opentab(tabName) {
+        var i, tabContents;
+        tabContents = document.getElementsByClassName("tab-contents");
+        for (i = 0; i < tabContents.length; i++) {
+            tabContents[i].style.display = "none";
+        }
+        document.getElementById(tabName).style.display = "block";
+    }
+</script>
+
 </head>
 <body class="container">
     <nav>
@@ -103,18 +222,10 @@
             <li><a href="{% url 'project_index' %}">Projects</a></li>
             <li><a href="{% url 'contact' %}">Contact</a></li>
         </ul>
-        <div class="header-text">
-            <p>Aspiring UI/UX Designer</p>
-            <h1>Hi, I'm <span>Sheryl Ann</span><br>from Philippines</h1>
-        </div>
     </nav>
 
     {% block page_content %}{% endblock page_content %}
 
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; {% now "Y" %} My Personal Portfolio. All rights reserved.</p>
-        </div>
-    </footer>
+
 </body>
 </html>
