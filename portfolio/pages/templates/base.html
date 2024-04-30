@@ -66,35 +66,30 @@
         }
     
         .header-text {
-    margin-top: 6%; /* Adjusted margin-top */
-    font-size: 30px;
-    display: flex; /* Use flexbox */
-    align-items: center; /* Align items vertically */
-}
-
-.header-text div {
-    flex: 1; /* This will make the text take up remaining space */
-}
-
-.header-text h1 {
-    font-size: 60px;
-    margin-top: 20px;
-}
-
-.header-text h1 span {
-    color: #ff004f;
-}
-
-.header-text img {
-    width: 100px;
-    border-radius: 50px;
-    margin-left: 20px; /* Optional: Add some margin to the left of the image */
-}
-
-
-
-
-
+            margin-top: 6%;
+            font-size: 30px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .header-text div {
+            flex: 1;
+        }
+        
+        .header-text h1 {
+            font-size: 60px;
+            margin-top: 20px;
+        }
+        
+        .header-text h1 span {
+            color: #ff004f;
+        }
+        
+        .header-text img {
+            width: 100px;
+            border-radius: 50px;
+            margin-left: 20px;
+        }
     
         #about {
             padding: 80px 0;
@@ -193,10 +188,9 @@
     
         .tab-links:hover::after,
         .tab-links.active-link::after {
-            width: 100%; /* Set width to 100% when hovering or when active */
+            width: 100%;
         }
     
-        /* Modify the red line behavior for the "Experience" and "Education" tabs */
         .tab-links.active-link.experience::after,
         .tab-links.active-link.education::after {
             width: 50%;
@@ -206,88 +200,86 @@
         .tab-links.education:hover::after,
         .tab-links.active-link.experience:hover::after,
         .tab-links.active-link.education:hover::after {
-            width: 0; /* Change the width to 0 by default */
+            width: 0;
         }
     
         .tab-links.experience:hover.active-link::after,
         .tab-links.education:hover.active-link::after {
-            width: 100%; /* Set width to 100% only when hovering and active */
+            width: 100%;
+        }
+        
+        #contact {
+            padding: 80px 0;
+            color: #ababab;
+        }
+        
+        .contact-left {
+            flex-basis: 35%;
+        }
+        
+        .contact-left p {
+            margin-top: 30px;
+        }
+        
+        .pink-icon {
+            color: #ff004f;
+        }
+        
+        .contact-right {
+            flex-basis: 60%;
+        }
+        
+        .social-icons {
+            margin-top: 30px;
         }
 
-        /*CONTACT*/
+        .social-icons a {
+            text-decoration: none;
+            font-size: 30px;
+            margin-right: 15px;
+            color: #ababab;
+            display: inline-block;
+            transition: transform 0.5s;
+        }
 
-#contact {
-    padding: 80px 0;
-    color: #ababab;
-}
+        .social-icons a:hover {
+            color: #ff004f;
+            transform: translateY(-5px);
+        }
 
-.contact-left {
-    flex-basis: 35%;
-}
+        .btn.btn2 {
+            display: inline-block;
+            background: #ff004f;
+        }
 
-.contact-left p {
-    margin-top: 30px;
-}
+        .contact-right form{
+            width: 100%;
+        }
 
-.pink-icon {
-    color: #ff004f;
-}
+        form input, form textarea {
+            width: 100%;
+            border: 0;
+            outline: none;
+            background: #262626;
+            padding: 15px;
+            margin: 15px 0;
+            color: #fff;
+            font-size: 18px;
+            border-radius: 6px;
+        }
 
-.contact-right {
-    flex-basis: 60%;
-}
+        form .btn2 {
+            padding: 14px 16px;
+            font-size: 18px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
 
-.social-icons {
-    margin-top: 30px;
-}
-
-.social-icons a {
-    text-decoration: none;
-    font-size: 30px;
-    margin-right: 15px;
-    color: #ababab;
-    display: inline-block;
-    transition: transform 0.5s;
-}
-
-.social-icons a:hover {
-    color: #ff004f;
-    transform: translateY(-5px);
-}
-
-.btn.btn2 {
-    display: inline-block;
-    background: #ff004f;
-}
-
-.contact-right form{
-    width: 100%;
-}
-
-form input, form textarea {
-    width: 100%;
-    border: 0;
-    outline: none;
-    background: #262626;
-    padding: 15px;
-    margin: 15px 0;
-    color: #fff;
-    font-size: 18px;
-    border-radius: 6px;
-}
-
-form .btn2 {
-    padding: 14px 16px;
-    font-size: 18px;
-    margin-top: 20px;
-    cursor: pointer;
-}
-
-#msg {
-    color: #61b752;
-    margin-top: -40px;
-    display: block;
-}
+        #msg {
+            color: #61b752;
+            margin-top: -40px;
+            display: block;
+        }
 
     </style>
     
